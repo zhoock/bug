@@ -1,0 +1,88 @@
+// Buttons
+//
+//
+
+=button-variant($color, $background, $hover-background, $disabled-background: $yellow, $border: transparent)
+    color: $color
+    background-color: $background
+    border: 1px solid $border
+
+    &:hover,
+    &:focus,
+    &:active
+        color: $color
+        background-color: $hover-background
+        +background-image($hover-background)
+
+    &.disabled,
+    &[disabled]
+        &:hover,
+        &:focus,
+        &:active
+            background-color: $disabled-background
+
+
+// Breakpoint
+//
+//
+
+
+=breakpoint($point)
+
+    // Device = Desktops
+    // Screen = 1281px to higher resolution desktops
+    @if $point == 1281
+        @media (min-width: #{1281px})
+            @content
+
+    // Device = Laptops, Desktops
+    // Screen = B/w 1025px to 1280px      
+    @if $point == 1025/1280
+        @media (min-width: #{1025px}) and (max-width: #{1280px})
+            @content
+
+
+
+    // Device = Tablets, Ipads (portrait)
+    // Screen = B/w 768px to 1024px
+    @if $point == 768/1024
+        @media (min-width: #{768px}) and (max-width: #{1024px})
+            @content
+
+
+
+    // Device = Tablets, Ipads (landscape)
+    // Screen = B/w 768px to 1024px         
+    @if $point == 768/landscape
+        @media (min-width: #{768px}) and (orientation: landscape)
+            @content
+
+
+
+    // Device = Low Resolution Tablets, Mobiles (Landscape)
+    // Screen = B/w 481px to 767px
+    @if $point == 481/767
+        @media (min-width: 481px) and (max-width: 767px)
+            @content
+
+
+
+    // Device = Most of the Smartphones Mobiles (Portrait)
+    // Screen = B/w 320px to 479px
+    @if $point == 320/479
+        @media (min-width: #{320px}) and (max-width: #{479px})
+            @content
+
+           
+
+    // medium (< 640px)
+    @if $point == tablet
+        @media (min-width: 40.0625em)
+            @content 
+
+
+    // large (< 1024px)
+    @if $point == desktops
+        @media (min-width: 64.0625em)
+            @content        
+

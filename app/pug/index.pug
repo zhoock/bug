@@ -1,0 +1,90 @@
+//- index.pug
+
+extends layout.pug
+
+block head
+  - var title = '';
+  - var description = '';
+
+  include ../includes/_head
+
+block content
+
+    .parallax-window(data-image-src="/images/header.jpg")
+
+    section#b-about-us.js-section
+        .row
+            .small-11.small-centered.column
+                article
+                    h2 История группы
+                    p.
+                        Весной 2002 года, два студента УУИ (Уфимское училище искусств): Ярослав Жук (гитара, вокал, скрипка) и Тимур Гареев (барабаны) организовали группу, позже к ним присоединяется Семён Лепёшкин (бас), также являющийся учащимся УУИ. Под названиями: «Сезон забоя пистолетов на фрау Дуб» и «Бен Ганн», группа даёт серию концертов и благополучно разваливается к осени того же года. Ярослав Жук создает проект «Жук», и зимой 2003 года на уфимской студии «Дервиш» при содействии сессионных музыкантов Владимира Прокофьева и Марата Гареева записывает версию песни: «Не насилуй меня». Дизайнер Артем Куренков делает клип на эту песню. Летом 2003 года вновь воссозданная группа записывает на студии «Дервиш» пять демонстрационных треков и распространяет их вместе с видеоклипом по продюсерским центрам в Москве. Группа распадается, чтобы собраться вновь лишь осенью 2004 года, на этот раз как «Заводной апельсин». Весной 2005 года группа записывает еще 10 песен на уфимской студии «Снеговик». Осенью 2012&nbsp;г. группа снимает <a href="#">клип</a> на&nbsp;песню &laquo;Овощи&raquo;. В&nbsp;съёмке
+                        участвовали: Ярослав&nbsp;Жук, Семён&nbsp;Лепёшкин, Салават&nbsp;Шамсутдинов (барабаны) и&nbsp;<a href="http://071075.gallery.ru/">Вячеслав&nbsp;Никулин</a> (видеосъёмка, монтаж). Клип выложен на&nbsp;видеохостинг YouTube 16&nbsp;октября 2012&nbsp;года.
+
+    section#b-music.js-section
+        .parallax-window(data-image-src="/images/music1.jpg")
+            article
+                .row
+                    .small-11.small-centered.column
+                        .row
+                            .small-12.medium-4.medium-push-8.column                                
+                                .b-wrapper-cover
+                                    img(src="/images/CD-cover-garmonia70м.jpg")
+
+                            .small-12.medium-8.medium-pull-4.column                               
+                                h2 Гармония 70м
+                                ol
+                                    li Ведро
+                                    li Цой vs. Led Zeppelin
+                                    li Город
+                                    li Суспензорий
+                                    li Овощи
+                                    li Буддистские монахи, пиздищие нефть из&nbsp;нефтяного трубопровода через дыру в&nbsp;трубе
+                                    li Жировоск
+                                    li Не насилуй меня
+                                    li Дом на горе
+                                    li Зеркало
+                                    li Встаньте, дети, встаньте в круг
+
+                        .row
+                            .small-12.medium-6.column
+                                .b-service-buttons.b-service-buttons--purchase
+                                    h3 Купить
+                                    ul
+                                        li: a(href="/").icon-apple
+                                        li: a(href="/").icon-amazon
+
+                            .small-12.medium-6.column
+                                .b-service-buttons.b-service-buttons--stream
+                                    h3 Слушать
+                                    ul
+                                        li: a(href="/").icon-applemusic
+                                        li: a(href="/").icon-yandex
+                                        li: a(href="/").icon-googleplay 
+                                        li: a(href="/").icon-deezer
+                                        li: a(href="/").icon-spotify
+
+    section#b-video.js-section
+        .row
+            .small-11.small-centered.column
+                article
+                    h2 Видео
+                    .row
+                        .small-12.medium-6.column
+                            figure
+                                a(href="/"): img(src="/images/screenshot-clip-1.jpg")
+                                figcaption Не насилуй меня
+                                    time(datetime="2003-10-16")
+                                        span.
+                                                16 Октября 2003
+
+                        .small-12.medium-6.column
+                            figure
+                                a(href="/"): img(src="/images/screenshot-clip-2.jpg")
+                                figcaption Овощи
+                                    time(datetime="2012-10-16")
+                                        span.
+                                                16 Октября 2012                                  
+
+
+                                                       

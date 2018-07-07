@@ -1,0 +1,115 @@
+// Menu-toggle
+//
+//
+
+
+.b-menu-hamburger
+
+    &__toggle
+        width: 40px
+        height: 40px
+        position: fixed
+        top: 1px
+        right: 8px
+        cursor: pointer
+        z-index: 100
+        transition: background .15s ease
+
+        .menu-open &
+            top: 9px
+            right: 9px
+
+        &:hover
+            div
+                background: lighten($link-color, 10%)
+
+        &.active
+            .one
+                +transform(rotate(45deg) translate(7px, 7px))
+
+            .two
+                +opacity(0)
+
+            .three
+                +transform(rotate(-45deg) translate(10px, -10px))
+
+        .one,
+        .two,
+        .three
+            width: 100%
+            height: 3px
+            background: $link-color
+            margin: 9px auto
+            backface-visibility: hidden
+            +transition-duration(0.3s)
+
+.b-menu-section
+    position: fixed
+    background: rgba($base-heading-color, .9)
+    top: 0
+    left: 0
+    width: 100%
+    height: 0%
+    z-index: 99
+    overflow: hidden
+    display: none
+    +transition(opacity .45s, height .45s)
+
+    .menu-open &
+        background: rgba($base-heading-color, 1)
+        display: block
+        height: 100%
+
+        li 
+            animation: fadeInRight .5s ease forwards
+            animation-delay: .35s
+      
+            &:nth-of-type(2) 
+                animation-delay: .4s
+      
+            &:nth-of-type(3) 
+                animation-delay: .45s
+      
+            &:nth-of-type(4) 
+                animation-delay: .50s
+      
+            &:nth-of-type(5) 
+                animation-delay: .55s
+
+    nav 
+        display: flex
+        justify-content: center
+        height: 100%
+        align-items: center           
+      
+    .b-menu
+        font-family: 'Oswald', sans-serif
+        display: flex
+        flex-direction: column
+        align-items: center
+        
+        li
+            a
+                +link-colors($body-bg-color, $link-color, $body-bg-color)
+                +adjust-font-size-to(1.618rem)
+                padding: 6.876px 29.124px
+                display: block
+                border: none
+
+                &.selected
+                    color: $nav-link-color-active
+                    pointer-events: none
+                    /* disables click event */
+
+/* Animations */
+// @keyframes fadeInRight 
+//     0% 
+//         opacity: 0
+//         left: 20%
+  
+//     100% 
+//         opacity: 1
+//         left: 0
+  
+                    
+

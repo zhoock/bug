@@ -1,0 +1,36 @@
+//- includes/_header.pug
+
+
+// header
+
+header(role="banner")    
+    .b-container
+        .row
+            .small-11.small-centered.column
+                .row
+                    .small-6.medium-3.columns
+                        a.logo(href="/") 
+                            span БАГ
+
+                    .small-6.medium-9.columns
+
+                        // Menu
+                        nav(role="navigation")
+                            ul.b-menu.hide-for-medium-down
+                                +nav
+                        // /Menu
+
+// Menu hamburger
+
+.b-container
+    .row
+        .small-11.small-centered.column
+            .b-menu-hamburger.js-menu-hamburger.hide-for-large-up
+                .b-menu-hamburger__toggle
+                    .one
+                    .two
+                    .three
+            
+// /Menu hamburger 
+
+// /header                      

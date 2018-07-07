@@ -1,0 +1,97 @@
+// Content
+//
+//
+
+
+section    
+    article
+        // flex: 0 0 100%
+        +rhythm-padding(1)
+   
+    &#b-music
+        color: $body-bg-color
+
+        h2, h3
+            color: $link-color       
+        
+        .b-wrapper-cover
+            +leader(1)
+
+            img
+                border: 6.854px solid rgba($link-color, .3)
+          
+    &#b-video
+        figure
+            +rhythm-margins(.5)
+            +trailing-border(1px)  
+
+            +breakpoint(tablet)
+                +trailing-border(0)
+               
+            figcaption
+                color: $base-heading-color
+                font-weight: $bold
+                text-transform: uppercase
+                +leader(.4)
+
+                +breakpoint(tablet)
+                    +leader(1)
+                    +adjust-font-size-to(1rem)
+
+                time
+                    font-weight: $light
+                    color: $base-text-color
+                    
+                    span::before
+                        content: " | "
+                        position: relative
+                        top: -1px
+                        left: 0
+
+            a
+                display: block
+                position: relative
+                border: none
+
+                img
+                    +trailer(0)
+                    vertical-align: middle
+
+                &:hover::after
+                    content: ''
+                    position: absolute
+                    display: block
+                    top: 0
+                    left: 0
+                    opacity: 0.9
+                    width: 100%
+                    height: 100%
+                    background: $link-color url(/images/playicon.svg) no-repeat center center
+                    background-size: 30%          
+           
+    .b-service-buttons
+        ul
+            +pie-clearfix
+            display: flex
+            flex-wrap: wrap
+            justify-content: start
+
+            li
+                width: 40%
+                margin-right: 1.45rem
+                +trailer(1)
+
+                a
+                    font-size: 28px
+                    height: 54px
+                    line-height: 54px
+                    border: 1px solid $base-text-color
+                    display: inline-block
+                    text-align: center
+                    width: 100%
+
+                    &:hover
+                        background-color: $link-color
+                        border-color: $link-color
+                        color: white        
+

@@ -1,0 +1,40 @@
+// Footer
+//
+//
+
+footer
+    // +rhythm-padding(1)
+    background: $base-heading-color
+    display: flex
+    align-items: center
+    min-height: 47.123px
+
+    .b-container
+        flex: 0 0 100%
+
+        ul
+            display: flex
+            justify-content: center
+            margin: 0
+
+            
+        address, li 
+            color: $link-color
+            +adjust-font-size-to(0.618rem)
+
+            span::before          
+                background: inherit
+                content: "|" 
+                position: relative
+                top: 0
+                left: 0
+                display: inline-block
+                padding: 0 11.125px  
+                
+        a
+            +link-colors($link-color, lighten($link-color, 10%), lighten($link-color, 10%))
+            border: none
+
+            &:hover
+                +hover-link
+        

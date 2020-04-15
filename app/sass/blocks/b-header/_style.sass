@@ -6,11 +6,11 @@
 .shim
     height: 47.123px
     width: 100%
-    background: $base-heading-color
+    background: $gray-shade-black
 
 header
     font-family: 'Oswald', sans-serif
-    +background-image(linear-gradient(to bottom, rgba(0, 0, 0, 0.85), $base-heading-color)) 
+    +background-image(linear-gradient(to bottom, rgba(0, 0, 0, 0.85), $gray-shade-black)) 
     height: 47.123px
     position: fixed
     left: 0
@@ -24,9 +24,9 @@ header
         flex: 0 0 100%
 
     a.logo
-        +link-colors($body-bg-color)
+        +link-colors($bone)
         border: none
-        +adjust-font-size-to(1.618rem, 0)
+        +adjust-font-size-to(1.999rem, 0)
         vertical-align: sub
 
         span
@@ -49,6 +49,7 @@ header
                     padding: 0 18px
                     border: none
                     text-transform: uppercase
+                    +adjust-font-size-to(1rem)
 
                     &.selected
                         color: $nav-link-color-active

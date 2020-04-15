@@ -4,7 +4,7 @@
 
 footer
     // +rhythm-padding(1)
-    background: $base-heading-color
+    background: $gray-shade-black
     display: flex
     align-items: center
     min-height: 47.123px
@@ -19,8 +19,8 @@ footer
 
             
         address, li 
-            color: $link-color
-            +adjust-font-size-to(0.618rem)
+            color: $bone
+            +adjust-font-size-to(0.707rem)
 
             span::before          
                 background: inherit
@@ -32,7 +32,7 @@ footer
                 padding: 0 11.125px  
                 
         a
-            +link-colors($link-color, lighten($link-color, 10%), lighten($link-color, 10%))
+            +link-colors($bone, lighten($bone, 10%), lighten($bone, 10%))
             border: none
 
             &:hover

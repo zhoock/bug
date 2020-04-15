@@ -41,25 +41,10 @@ BUG.hamburger = function(){
 //parallax
 BUG.parallax = function(){
     $('.parallax-window').parallax({
-        positionY: 'center',
-        positionX: 'left',
+        naturalWidth: 1672,
+        naturalHeight: 1078,
         androidFix: 'false'
-    }); 
-};
-
-
-
-//menufooter
-BUG.menufooter = function(){
-    $('.js-menu-footer').on('click', function (e) {
-        $(this)
-            .closest(".b-nav-col")
-            .find(".b-expandable")
-            .stop(true,true)
-            .toggle();
-
-        e.preventDefault();
-    }); 
+    });
 };
 
 
@@ -99,12 +84,16 @@ BUG.scrollTo = function() {
 
 
 
+
 $(function(){
+
     BUG.hamburger();
     BUG.parallax();
     BUG.menufooter();
     BUG.scrollTo();
 });
+
+
 
 
 

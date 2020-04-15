@@ -6,5 +6,5 @@ mixin link(href, name, accesskey)
 		a(href=href, title=name, accesskey=accesskey)&attributes(attributes)= name
 
 mixin nav
-	each val, index in {"b-about-us":"Группа", "b-music":"Музыка", "b-video":"Видео"}
+	each val, index in {"b-about-us":"Группа", "b-music":"Музыка"}
 		+link("#" + index, val)

@@ -17,6 +17,9 @@ html, body
 // html
 //     font-size: 62.5%
 
+// Настройки типографики взяты с:
+// https://www.modularscale.com/?1&em&1.414
+
 html,
 button,
 input,
@@ -36,25 +39,50 @@ body
     iframe
         +margin-trailer
 
-    h1, h2, h3
+    p
+        +adjust-font-size-to(1rem)
+
+
+    h1, h2, h3, h4, time
         font-family: 'Oswald', sans-serif
-        color: $base-heading-color
-        font-weight: $regular
+        font-weight: $light
         text-transform: uppercase
         letter-spacing: 1.623px
-        +rhythm-margins(1)
+        +rhythm-margins(1, 0.3)
 
     h1
-        +adjust-font-size-to(5.359rem)       
+        color: white
+        font-weight: $bold
+        text-transform: none
+        +adjust-font-size-to(3.998rem)
+
+        +breakpoint(desktops)
+            +adjust-font-size-to(7.993rem)
+     
 
     h2
-        +adjust-font-size-to(1.618rem, 1.2) 
+        color: $bone
+        +adjust-font-size-to(1.414rem) 
                       
         +breakpoint(desktops)
-            +adjust-font-size-to(2.618rem)
+            +adjust-font-size-to(1.999rem)
 
     h3
-        +adjust-font-size-to(1.618rem, 1.2)
+        color: $complementary-color
+        letter-spacing: 2.5px
+        +adjust-font-size-to(1rem)
+
+        +breakpoint(desktops)
+            +adjust-font-size-to(1.414rem)
+
+    h4
+        font-weight: $regular
+        +trailer(0)
+        +adjust-font-size-to(0.707rem)
+
+        +breakpoint(desktops)
+            +trailer(.2)
+            +adjust-font-size-to(1rem)
 
     ul, ol
         +margin-trailer
@@ -67,21 +95,24 @@ body
         padding-left: 27px
 
         li
-            padding-left: 11.125px         
+            padding-left: 11.125px    
+
+      
     a
-        +link-colors($base-text-color, lighten($base-text-color, 10%), lighten($base-text-color, 10%))
+        +link-colors($base-font-color, lighten($base-font-color, 10%), lighten($base-font-color, 10%))
         text-decoration: none
         border-bottom: 1px solid
         +transition(color .15s)
 
         &:hover
-            border-bottom-color: lighten($base-text-color, 10%)
+            border-bottom-color: lighten($base-font-color, 10%)
 
         &.dashed    
-            border-bottom: 1px dashed $link-color
+            border-bottom: 1px dashed $bone
 
     img, embed, object, video
         max-width: 100%
+        width: 100%
 
     .callout
         position: relative
@@ -92,26 +123,23 @@ body
     .primary
         // background-color: lighten($mustard, 40%)
 
-    .b-container
-        position: relative
-        max-width: 1600px
-        margin: 0 auto
+    // .b-container
+    //     position: relative
+    //     max-width: 1600px
+    //     margin: 0 auto
                  
     .parallax-window    
         background: transparent
-        min-height: 38.8vw
+        min-height: 35vw        
         display: flex
         align-items: center
+
+        +breakpoint(tablet)
+            min-height: 40vw
 
         article
             flex: 0 0 100%
             +rhythm-padding(1)
-        
-                         
-    // &--495studio
-    //     +breakpoint(480)
-    //     background: url(/images/header--mobile.jpg) 25% 0px
-    //     background-size: cover
                      
                
 

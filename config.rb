@@ -2,8 +2,9 @@
 http_path = "/"
 css_dir = "./dist/css"
 sass_dir = "./app/sass"
-images_dir = "./app/images"
+images_dir = './dist/images'
 javascripts_dir = "./app/scripts"
+fonts_dir = "./dist/fonts"
 
 # You can select your preferred output style here (can be overridden via the command line):
 output_style = :expanded

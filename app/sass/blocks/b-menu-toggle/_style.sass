@@ -21,7 +21,7 @@
 
         &:hover
             div
-                background: lighten($link-color, 10%)
+                background: lighten($bone, 10%)
 
         &.active
             .one
@@ -38,14 +38,14 @@
         .three
             width: 100%
             height: 3px
-            background: $link-color
+            background: $bone
             margin: 9px auto
             backface-visibility: hidden
             +transition-duration(0.3s)
 
 .b-menu-section
     position: fixed
-    background: rgba($base-heading-color, .9)
+    background: rgba($gray-shade-black, .9)
     top: 0
     left: 0
     width: 100%
@@ -56,7 +56,7 @@
     +transition(opacity .45s, height .45s)
 
     .menu-open &
-        background: rgba($base-heading-color, 1)
+        background: rgba($gray-shade-black, 1)
         display: block
         height: 100%
 
@@ -90,7 +90,7 @@
         
         li
             a
-                +link-colors($body-bg-color, $link-color, $body-bg-color)
+                +link-colors($body-bg-color, $bone, $body-bg-color)
                 +adjust-font-size-to(1.618rem)
                 padding: 6.876px 29.124px
                 display: block

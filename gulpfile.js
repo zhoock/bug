@@ -1,52 +1,57 @@
-"use strict";
-
-var gulp = require('gulp'),
-    compass = require('gulp-compass'),
-    minifyCSS = require('gulp-clean-css'),
-    rename = require("gulp-rename"),
-    pug = require('gulp-pug'),
-    watch = require('gulp-watch'),
-    notify = require("gulp-notify"),
-    connect = require('gulp-connect'),
-    uglify = require('gulp-uglify'),
-    jsImport = require('gulp-js-import'),
-    imagemin = require('gulp-imagemin');
+// Load plugins
+const gulp = require('gulp');
+const notify = require("gulp-notify");
+const browsersync = require("browser-sync").create();
+const pug = require('gulp-pug');
+const compass = require('gulp-compass');
+const minifyCSS = require('gulp-clean-css');
+const rename = require("gulp-rename");
+const jsImport = require('gulp-js-import');
+const uglify = require('gulp-uglify');
 
 
-// server connect
-gulp.task('connect', function() {
-    connect.server({
-        port: 1618,
-        root: 'dist',
-        livereload: true
-    });
-});
+// BrowserSync (Static server)
+function browserSync(done) {
+  browsersync.init({
+    server: {
+      baseDir: "./dist"
+    },
+    port: 3000
+  });
+
+  done();
+}
 
 
+// BrowserSync Reload
+function browserSyncReload(done) {
+  browsersync.reload();
+  done();
+}
 
-// templates
-gulp.task('templates', function() {
-    gulp.src('./app/pug/index.pug')
+// Templates
+function templates() {
+    return gulp
+        .src('./app/pug/index.pug')
         .pipe(pug({
             pretty: false,
             data: {
                 debug: false
             }
         }))
-        .pipe(gulp.dest('./dist/'))
+        .pipe(gulp.dest('./dist'))
         .pipe(notify('html собран! '))
-        .pipe(connect.reload());
-});
-
+        .pipe(browsersync.stream());
+}
 
 // Compile Our Sass
-gulp.task('compass', function() {
-    gulp.src('./app/sass/**/*.+(scss|sass)')
-
+function css() {
+    return gulp
+        .src('./app/sass/**/*.+(scss|sass)')
         .pipe(compass({
             config_file: 'config.rb',
-            css: './dist/css',
             sass: './app/sass',
+            css: './dist/css',
             sourcemap: true
         }))
         .on('error', function(err) {
@@ -57,51 +62,46 @@ gulp.task('compass', function() {
         .pipe(rename("style.min.css"))
         .pipe(gulp.dest('./dist/css/'))
         .pipe(notify('css собран! '))
-        .pipe(connect.reload());
-});
-
+        .pipe(browsersync.stream());
+}
 
 // Concatenate & Minify JS
-gulp.task('jsImport', function() {
-    return gulp.src('./app/js/main.js')
+function js() {
+    return gulp
+        .src('./app/js/main.js')
         .pipe(jsImport({ hideConsole: true }))
         .pipe(uglify())
         .pipe(rename('main-min.js'))
         .pipe(gulp.dest('./dist/js'))
         .pipe(notify('js собран! '))
-        .pipe(connect.reload());
-});
+        .pipe(browsersync.stream());   
+}
+
+// Fonts
+function fonts() {
+    return gulp
+        .src('./app/fonts/**/*')
+        .pipe(gulp.dest('./dist/fonts'));
+}
 
 
-// imagemin
-gulp.task('compress', function() {
-    return gulp.src('./app/images/**/*.+(png|jpg|gif|svg|ico)')
-        .pipe(imagemin([
-            imagemin.gifsicle({ interlaced: true }),
-            imagemin.jpegtran({ progressive: true }),
-            imagemin.optipng({ optimizationLevel: 5 }),
-        ]))
-        .pipe(gulp.dest('./dist/images'))
-});
+// Watch files
+function watchFiles() {
+    gulp.watch('./app/**/*.pug', templates);
+    gulp.watch('./app/**/*.+(scss|sass)', css);
+    gulp.watch('./app/**/*.js', js); 
+}
 
 
-// fonts
-gulp.task('fonts', function() {
-    return gulp.src('./app/fonts/**/*')
-        .pipe(gulp.dest('./dist/fonts'))
-});
+// define complex tasks
+const build = gulp.parallel(templates, css, js);
+const watch = gulp.parallel(watchFiles, browserSync);
 
+// export tasks
+exports.default = build;
+exports.watch = watch;
+exports.pug = templates;
+exports.css = css;
+exports.js = js;
+exports.fonts = fonts;
 
-// watch
-gulp.task('watch', function() {
-    gulp.watch(('./app/**/*.pug'), ['templates']);
-    gulp.watch(('./app/**/*.+(scss|sass)'), ['compass']);
-    gulp.watch(('./app/**/*.js'), ['jsImport']);
-    gulp.watch(('./app/images/*'), ['compress']);
-});
-
-// default
-gulp.task('default', ['connect', 'templates', 'compass', 'jsImport', 'fonts', 'watch']);
-
-// compress img
-gulp.task('img', ['compress']);

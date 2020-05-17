@@ -3,79 +3,69 @@
 extends layout.pug
 
 block head
-  - var title = '';
-  - var description = '';
+    - var title = 'Смоляное чучелко';
+    - var description = 'Официальный сайт Смоляное чучелко';
+    - var keywords = 'Гранж, пост-гранж, альтернативный рок, альтернатива, grunge, post-grunge, гранж жив, последний поршневый бомбардировщик, водянистая влага, рулевой мёртв, бром и сталь, падение кита';
+    - var mainMenu = true;
+    
+    include ../includes/_head
 
-  include ../includes/_head
-
+    
 block content
     section
-        .parallax-window(data-image-src="/images/header(1672x1078).jpg")
+        .parallax-window(data-parallax="scroll", data-image-src="/images/header.jpg", data-natural-width="1672" data-natural-height="1078")
             article 
                 .row
                     .small-11.small-centered.column
                         h1 Гранж жив
                     
-
     section#b-about-us.js-section       
         article
                 .row
-                    .small-8.small-centered.small-only-text-center.column
-                        h2 Группа
+                    .small-9.small-centered.column
+                        h2.small-only-text-center Группа
                         p.
-                            Смоляное чучелко — русская рок-группа из Москвы, в которую вошли бывшие участники уфимской рок-группы Заводной Апельсин: Ярослав Жук и Семён Лепёшкин. Звучание группы возвращает сиэтлский гранж 90-х вопреки модным и текущим тенденциям в мире рок-музыки существующей в России.
+                            Смоляное чучелко&nbsp;&mdash; русская рок-группа из&nbsp;Москвы, в&nbsp;которую вошли бывшие участники уфимской рок-группы Заводной Апельсин: Ярослав Жук и&nbsp;Семён Лепёшкин. Звучание группы возвращает сиэтлский гранж 90-х вопреки модным и&nbsp;текущим тенденциям в&nbsp;современой рок-музыке. Название группы образовано от американского термина tar-baby, относящегося к&nbsp;проблемной ситуации, которая лишь усугубляется при попытках взаимодействия с&nbsp;ней.
 
     section#b-music.js-section
-        .parallax-window(data-image-src="/images/music(1500x1125).jpg")
+        .parallax-window(data-parallax="scroll", data-image-src="/images/music.jpg", data-natural-width="1500" data-natural-height="1125")
             article
                 .row
-                    .small-11.small-centered.small-only-text-center.column
+                    .small-9.small-centered.small-only-text-center.column
                         .row
-                            .small-8.small-centered.medium-uncentered.medium-4.medium-push-8.column                                
+                            .small-12.small-centered.medium-uncentered.medium-5.medium-push-7.column                                
                                 .b-wrapper-cover
-                                    img(src="/images/Tar-Baby-Cover.png")
+                                    img(src="/images/Tar-Baby-Cover.png", alt="Обложка альбома Смоляное чучелко")
 
-                            .small-12.medium-8.medium-pull-4.column                               
+                            .small-12.medium-7.medium-pull-5.column                               
                                 h2 Смоляное чучелко
                                 h3 Треки
                                 ol.small-text-left
-                                    li Последний поршневый бомбардировщик
-                                    li Водянистая влага
-                                    li Рулевой мёртв
-                                    li Бром и сталь
-                                    li Падение кита
+                                    li: a(href="/the_last_piston_bomber.html") Последний поршневый бомбардировщик
+                                    li: a(href="/watery_moisture.html") Водянистая влага
+                                    li: a(href="/helmsman_dead.html") Рулевой мёртв
+                                    li: a(href="/bromine_and_steel.html") Бром и сталь
+                                    li: a(href="/whale_falling.html") Падение кита
 
-                        .row
-                            .small-8.small-centered.medium-uncentered.medium-6.column
-                                .b-service-buttons.b-service-buttons--purchase
-                                    h3 Купить
-                                    ul
-                                        li: a(href="/").icon-apple
-                                        li: a(href="/").icon-amazon
+                        include ../includes/_distribution
 
-                            .small-8.small-centered.medium-uncentered.medium-6.column
-                                .b-service-buttons.b-service-buttons--stream
-                                    h3 Слушать
-                                    ul
-                                        li: a(href="/").icon-applemusic
-                                        li: a(href="/").icon-yandex
-                                        li: a(href="/").icon-googleplay 
-                                        li: a(href="/").icon-deezer
-                                        li: a(href="/").icon-spotify
 
 
     section#b-album-details.js-section
         article
             .row
-                .small-8.small-centered.small-only-text-center.column
+                .small-9.small-centered.small-only-text-center.column
                     .row
                         .small-12.medium-4.medium-push-8.column
                             .b-album-details__released
                                 h2 Релиз
-                                time 16/10/2020
+                                time 16/04/2020
 
                         .small-12.medium-8.medium-pull-4.column
                             .b-album-details__music
+                                h4 Жанр 
+                                ul
+                                    li Гранж, альтернативный рок.
                                 h4 Запись
                                 ul
                                     li 16 октября—28 декабря 2018 (Музыкальная Академия Матвиенко М.А.М.А, Москва). 
@@ -90,9 +80,6 @@ block content
                                 h4 Мастеринг 
                                 ul
                                     li 31 марта 2020—10 апреля 2020 (Chicago Mastering Service, Chicago, USA). 
-                                h4 Жанр 
-                                ul
-                                    li Гранж, альтернативный рок.
 
                                 h4 Исполнители 
                                 ul 
@@ -101,13 +88,13 @@ block content
 
                                 h4 Сессионные музыканты
                                 ul
-                                    li Алексей Ежевич — ударные. 
+                                    li Алексей Еживич — ударные. 
                                     li Наталья Хмелёвская — виолончель («Водянистая влага»).
 
                                 h4 Продюсирование 
                                 ul 
                                     li Жук Ярослав — продюсер.
-                                    li Илья Лукашёв — звукоинженер. 
+                                    li Илья Лукашев — звукоинженер. 
                                     li Юрий Катешев — звукоинженер (запись виолончели).
                                     li Антон Артисюк — звукоинженер (запись акустической гитары).
                                     li Александр Колесников — звукоинженер (запись вокала). 

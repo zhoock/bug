@@ -1,36 +1,41 @@
 //- includes/_header.pug
 
 
-// header
-
 header(role="banner")    
     .b-container
         .row
             .small-11.small-centered.column
                 .row
-                    .small-8.medium-7.columns
+                    .small-9.medium-7.columns
                         a.logo(href="/") 
                             span СМОЛЯНОЕ ЧУЧЕЛКО
 
-                    .small-4.medium-5.columns
+                    .small-3.medium-5.columns
 
-                        // Menu
-                        nav(role="navigation")
-                            ul.b-menu.hide-for-medium-down
-                                +nav
-                        // /Menu
+                        if mainMenu
 
-// Menu hamburger
+                            // Menu
+                            nav(role="navigation")
+                                ul.b-menu.hide-for-medium-down
+                                    +nav
+                            // /Menu
+
+                        else
+
+
 
 .b-container
     .row
         .small-11.small-centered.column
-            .b-menu-hamburger.js-menu-hamburger.hide-for-large-up
-                .b-menu-hamburger__toggle
-                    .one
-                    .two
-                    .three
-            
-// /Menu hamburger 
 
-// /header                      
+            if mainMenu
+
+                // Menu hamburger
+                .b-menu-hamburger.js-menu-hamburger.hide-for-large-up
+                    .b-menu-hamburger__toggle
+                        .one
+                        .two
+                        .three
+                // /Menu hamburger  
+
+            else                    

@@ -2,15 +2,20 @@
 
 include ../includes/_mixins
 
+
 doctype html
 html(lang="ru")
 
     block head
 
     body
+        // header
         .shim
-
+   
+        
         include ../includes/_header
+
+        // /header
 
         // content
         main(role="main")
@@ -20,6 +25,13 @@ html(lang="ru")
             block content                                                                       
         // /content
 
+        // footer
         include ../includes/_footer
+        // /footer
 
+    
+    //- script(src = "https://unpkg.com/react@16/umd/react.production.min.js" crossorigin)
+    //- script(src = "https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin)
+    //- script(src = "https://unpkg.com/babel-standalone@6.26.0/babel.js")
+    //- script(src = "/js/react.js", type="text/babel")
     script(src = "/js/main-min.js?v=1")

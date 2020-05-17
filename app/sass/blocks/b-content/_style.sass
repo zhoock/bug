@@ -18,11 +18,18 @@ section
             +breakpoint(tablet)
                 padding-left: 27px
 
-            li
-                color: $bone
+            li a
+                color: $body-bg-color
+                border: none
+
+                &:hover
+                    color: $bone
 
                 +breakpoint(desktops)
                     +adjust-font-size-to(1.414rem)
+
+
+
 
         .b-wrapper-cover
             +leader(1)

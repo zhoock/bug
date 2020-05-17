@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/* bugrock website */
+/* smolyanoechuchelko website */
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700&amp;subset=cyrillic,cyrillic-ext"');
 @import url("https://fonts.googleapis.com/css?family=Oswald:300,400,500&subset=cyrillic");
 html, body, div, span, applet, object, iframe,
@@ -2713,8 +2713,8 @@ body h1 {
   color: white;
   font-weight: 700;
   text-transform: none;
-  font-size: 3.998rem;
-  line-height: 5.656rem;
+  font-size: 2.827rem;
+  line-height: 4.242rem;
 }
 @media (min-width: 64.0625em) {
   body h1 {
@@ -2742,7 +2742,7 @@ body h3 {
 @media (min-width: 64.0625em) {
   body h3 {
     font-size: 1.414rem;
-    line-height: 2.828rem;
+    line-height: 1.6968rem;
   }
 }
 body h4 {
@@ -2847,9 +2847,15 @@ header .b-container {
 header a.logo {
   color: #e3dac9;
   border: none;
-  font-size: 1.999rem;
+  font-size: 1.414rem;
   line-height: 0rem;
   vertical-align: sub;
+}
+@media (min-width: 64.0625em) {
+  header a.logo {
+    font-size: 1.999rem;
+    line-height: 0rem;
+  }
 }
 header a.logo span {
   font-weight: 700;
@@ -2906,11 +2912,15 @@ section#b-music ol {
     padding-left: 27px;
   }
 }
-section#b-music ol li {
+section#b-music ol li a {
+  color: #99a0a3;
+  border: none;
+}
+section#b-music ol li a:hover {
   color: #e3dac9;
 }
 @media (min-width: 64.0625em) {
-  section#b-music ol li {
+  section#b-music ol li a {
     font-size: 1.414rem;
     line-height: 2.828rem;
   }
@@ -2985,10 +2995,11 @@ section .b-service-buttons ul li a:hover {
 }
 
 footer {
+  padding-top: 1.1312rem;
+  padding-bottom: 1.1312rem;
   background: #0C0C0A;
   display: flex;
   align-items: center;
-  min-height: 47.123px;
 }
 footer .b-container {
   flex: 0 0 100%;
@@ -2998,12 +3009,12 @@ footer .b-container ul {
   justify-content: center;
   margin: 0;
 }
-footer .b-container address, footer .b-container li {
+footer .b-container ul li {
   color: #e3dac9;
   font-size: 0.707rem;
   line-height: 1.414rem;
 }
-footer .b-container address span::before, footer .b-container li span::before {
+footer .b-container ul li span::before {
   background: inherit;
   content: "|";
   position: relative;
@@ -3012,21 +3023,33 @@ footer .b-container address span::before, footer .b-container li span::before {
   display: inline-block;
   padding: 0 11.125px;
 }
-footer .b-container a {
+footer .b-container ul li a {
   color: #e3dac9;
+}
+footer .b-container ul li a:hover {
+  color: #f4f1eb;
+}
+footer .b-container ul li a:active {
+  color: #f4f1eb;
+}
+footer .b-container ul li a:hover {
+  color: #6B4C2B;
+  border-color: #6B4C2B;
+}
+footer .b-container ul.b-social-networks li {
+  font-size: 1.414rem;
+  line-height: 2.828rem;
+  margin: 0 8px;
+}
+@media (min-width: 64.0625em) {
+  footer .b-container ul.b-social-networks li {
+    font-size: 1.999rem;
+    line-height: 2.828rem;
+    margin: 0 10px;
+  }
+}
+footer .b-container ul.b-social-networks li a {
   border: none;
-}
-footer .b-container a:hover {
-  color: #f4f1eb;
-}
-footer .b-container a:active {
-  color: #f4f1eb;
-}
-footer .b-container a:hover {
-  text-decoration: none;
-}
-footer .b-container a:hover:hover, footer .b-container a:hover:focus {
-  text-decoration: underline;
 }
 
 .b-menu-hamburger__toggle {
@@ -3147,7 +3170,7 @@ footer .b-container a:hover:hover, footer .b-container a:hover:focus {
 /* Animations */
 @font-face {
   font-family: "icomoon";
-  src: url('../fonts/icomoon.woff?1530545872') format('woff'), url('../fonts/icomoon.ttf?1530545872') format('truetype'), url('../fonts/icomoon.svg?1530545872') format('svg');
+  src: url('../fonts/icomoon.woff?1587832368') format('woff'), url('../fonts/icomoon.ttf?1587832368') format('truetype'), url('../fonts/icomoon.svg?1587832368') format('svg');
 }
 [class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
@@ -3164,32 +3187,60 @@ footer .b-container a:hover:hover, footer .b-container a:hover:focus {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-amazon:before {
+.icon-bandcamp:before {
+  content: "";
+}
+
+.icon-youtube:before {
+  content: "";
+}
+
+.icon-tidal:before {
+  content: "";
+}
+
+.icon-youtube1:before {
+  content: "";
+}
+
+.icon-instagram:before {
+  content: "";
+}
+
+.icon-facebook:before {
+  content: "";
+}
+
+.icon-vk:before {
   content: "";
 }
 
-.icon-apple:before {
+.icon-amazon:before {
   content: "";
 }
 
-.icon-applemusic:before {
+.icon-apple:before {
   content: "";
 }
 
-.icon-deezer:before {
+.icon-applemusic:before {
   content: "";
 }
 
-.icon-googleplay:before {
+.icon-deezer:before {
   content: "";
 }
 
-.icon-spotify:before {
+.icon-googleplay:before {
   content: "";
 }
 
-.icon-yandex:before {
+.icon-spotify:before {
   content: "";
+}
+
+.icon-yandex:before {
+  content: "";
 }
 
 /*# sourceMappingURL=style.css.map */

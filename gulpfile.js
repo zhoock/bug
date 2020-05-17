@@ -32,7 +32,7 @@ function browserSyncReload(done) {
 // Templates
 function templates() {
     return gulp
-        .src('./app/pug/index.pug')
+        .src('./app/pug/*.pug')
         .pipe(pug({
             pretty: false,
             data: {

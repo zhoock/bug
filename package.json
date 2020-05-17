@@ -2,8 +2,11 @@
   "name": "gulp-project",
   "version": "0.1.0",
   "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
     "browser-sync": "^2.26.7",
     "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
     "gulp-clean-css": "^4.2.0",
     "gulp-compass": "^2.1.0",
     "gulp-connect": "^5.7.0",

@@ -1,11 +1,12 @@
-@import 'vendor/jquery-1.10.2.min.js'
+@import 'vendor/jquery-3.5.0.min.js'
 @import 'vendor/parallax.min.js'
 @import 'vendor/waypoints.min.js'
 
-var BUG = BUG || {};
+var TARBABY = TARBABY || {};
+
 
 // гамбургер меню
-BUG.hamburger = function(){
+TARBABY.hamburger = function(){
     var isActive = false,
         $hamburgerToggle = $(".b-menu-hamburger__toggle");
 
@@ -39,22 +40,19 @@ BUG.hamburger = function(){
 
 
 //parallax
-BUG.parallax = function(){
-    $('.parallax-window').parallax({
-        naturalWidth: 1672,
-        naturalHeight: 1078,
-        androidFix: 'false'
-    });
-};
+//https://pixelcog.github.io/parallax.js/
+// TARBABY.parallax = function(){
+//     $('.js-parallax-window').parallax();
+// };
 
 
 
 //scrollTo
-BUG.scrollTo = function() {
+TARBABY.scrollTo = function() {
     $('a[href^="#"]').on("click", function() {
 
         var target = $(this).attr('href');
-
+        
         window.parent.$('html, body').animate({ scrollTop: $(target).offset().top + -45 }, 1000);
         return false;
     });
@@ -85,13 +83,13 @@ BUG.scrollTo = function() {
 
 
 
-$(function(){
 
-    BUG.hamburger();
-    BUG.parallax();
-    BUG.menufooter();
-    BUG.scrollTo();
+$(function(){
+    TARBABY.hamburger();
+    TARBABY.scrollTo();
 });
+
+
 
 
 

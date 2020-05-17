@@ -26,9 +26,12 @@ header
     a.logo
         +link-colors($bone)
         border: none
-        +adjust-font-size-to(1.999rem, 0)
+        +adjust-font-size-to(1.414rem, 0)
         vertical-align: sub
 
+        +breakpoint(desktops)
+            +adjust-font-size-to(1.999rem, 0)
+        
         span
             font-weight: $bold
 

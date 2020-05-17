@@ -3,11 +3,10 @@
 //
 
 footer
-    // +rhythm-padding(1)
+    +rhythm-padding(.8)
     background: $gray-shade-black
     display: flex
     align-items: center
-    min-height: 47.123px
 
     .b-container
         flex: 0 0 100%
@@ -17,24 +16,40 @@ footer
             justify-content: center
             margin: 0
 
-            
-        address, li 
-            color: $bone
-            +adjust-font-size-to(0.707rem)
+            li
+                color: $bone
+                +adjust-font-size-to(0.707rem)
 
-            span::before          
-                background: inherit
-                content: "|" 
-                position: relative
-                top: 0
-                left: 0
-                display: inline-block
-                padding: 0 11.125px  
+                span::before          
+                    background: inherit
+                    content: "|" 
+                    position: relative
+                    top: 0
+                    left: 0
+                    display: inline-block
+                    padding: 0 11.125px  
                 
-        a
-            +link-colors($bone, lighten($bone, 10%), lighten($bone, 10%))
-            border: none
+                a
+                    +link-colors($bone, lighten($bone, 10%), lighten($bone, 10%))
 
-            &:hover
-                +hover-link
+                    &:hover
+                        color: $complementary-color
+                        border-color: $complementary-color            
+
+            &.b-social-networks
+                li
+                    +adjust-font-size-to(1.414rem)
+                    margin: 0 8px
+
+                    +breakpoint(desktops)
+                        +adjust-font-size-to(1.999rem)
+                        margin: 0 10px
+                    
+                    a 
+                        border: none
+
+
+
+
+
         

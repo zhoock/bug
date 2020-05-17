@@ -7,7 +7,7 @@
     "browser-sync": "^2.26.7",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
-    "gulp-clean-css": "^4.2.0",
+    "gulp-clean-css": "^4.3.0",
     "gulp-compass": "^2.1.0",
     "gulp-connect": "^5.7.0",
     "gulp-js-import": "^1.0.6",

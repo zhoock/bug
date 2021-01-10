@@ -127,22 +127,28 @@ body
     //     position: relative
     //     max-width: 1600px
     //     margin: 0 auto
+
                  
-    .parallax-window    
-        background: transparent
-        min-height: 35vw        
+    .parallax-window
+        background: url("../images/header.jpg")
+        background-size: cover
+        min-height: 64vw                
         display: flex
         align-items: center
 
-        +breakpoint(tablet)
-            min-height: 40vw
+        &__music
+            background: url("../images/music.jpg")
 
+        +breakpoint(tablet)
+            background: transparent
+            min-height: 40vw
+            
         article
             flex: 0 0 100%
             +rhythm-padding(1)
-                     
-               
 
+
+    
 // header
 @import "../blocks/b-header/style"
 

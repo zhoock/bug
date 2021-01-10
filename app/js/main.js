@@ -1,3 +1,5 @@
+"use strict";
+
 @import 'vendor/jquery-3.5.0.min.js'
 @import 'vendor/parallax.min.js'
 @import 'vendor/waypoints.min.js'
@@ -6,7 +8,7 @@ var TARBABY = TARBABY || {};
 
 
 // гамбургер меню
-TARBABY.hamburger = function(){
+TARBABY.hamburger = function() {
     var isActive = false,
         $hamburgerToggle = $(".b-menu-hamburger__toggle");
 

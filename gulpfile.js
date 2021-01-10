@@ -7,7 +7,7 @@ const compass = require('gulp-compass');
 const minifyCSS = require('gulp-clean-css');
 const rename = require("gulp-rename");
 const jsImport = require('gulp-js-import');
-const uglify = require('gulp-uglify');
+const terser = require('gulp-terser');
 
 
 // BrowserSync (Static server)
@@ -70,8 +70,8 @@ function js() {
     return gulp
         .src('./app/js/main.js')
         .pipe(jsImport({ hideConsole: true }))
-        .pipe(uglify())
         .pipe(rename('main-min.js'))
+        //.pipe(terser())
         .pipe(gulp.dest('./dist/js'))
         .pipe(notify('js собран! '))
         .pipe(browsersync.stream());   

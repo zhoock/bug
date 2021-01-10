@@ -2802,13 +2802,18 @@ body .callout {
   padding: 1rem;
 }
 body .parallax-window {
-  background: transparent;
-  min-height: 35vw;
+  background: url("../images/header.jpg");
+  background-size: cover;
+  min-height: 64vw;
   display: flex;
   align-items: center;
 }
+body .parallax-window__music {
+  background: url("../images/music.jpg");
+}
 @media (min-width: 40.0625em) {
   body .parallax-window {
+    background: transparent;
     min-height: 40vw;
   }
 }

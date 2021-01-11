@@ -40,15 +40,6 @@ TARBABY.hamburger = function() {
 };
 
 
-
-//parallax
-//https://pixelcog.github.io/parallax.js/
-// TARBABY.parallax = function(){
-//     $('.js-parallax-window').parallax();
-// };
-
-
-
 //scrollTo
 TARBABY.scrollTo = function() {
     $('a[href^="#"]').on("click", function() {
@@ -58,8 +49,6 @@ TARBABY.scrollTo = function() {
         window.parent.$('html, body').animate({ scrollTop: $(target).offset().top + -45 }, 1000);
         return false;
     });
-
-
 
     $('.js-section')
         .waypoint(function(direction) {
@@ -81,8 +70,6 @@ TARBABY.scrollTo = function() {
             }
         });
 };
-
-
 
 
 

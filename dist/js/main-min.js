@@ -24,6 +24,7 @@ https://github.com/imakewebthings/jquery-waypoints/blob/master/licenses.txt
 var TARBABY = TARBABY || {};
 
 
+
 // гамбургер меню
 TARBABY.hamburger = function() {
     var isActive = false,

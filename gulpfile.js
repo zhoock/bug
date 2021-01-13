@@ -1,3 +1,6 @@
+"use strict";
+
+
 // Load plugins
 const gulp = require('gulp');
 const notify = require("gulp-notify");

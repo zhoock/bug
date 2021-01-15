@@ -3,12 +3,23 @@
 //
 
 
-section    
+section
+    &.header
+        background: transparent url("../images/header.jpg") center 72% no-repeat 
+        background-size: cover
+        min-height: 64vw
+        display: flex
+        align-items: center
+
+        +breakpoint(tablet)
+            min-height: 40vw
+
     article
         +rhythm-padding(1)
 
     &#b-music
         color: $body-bg-color
+        background: url("../images/british-style-black-grill-coth.jpg")
 
         ol
             padding-left: 23%
@@ -26,25 +37,37 @@ section
                 +breakpoint(desktops)
                     +adjust-font-size-to(1.414rem)
 
-
         .b-wrapper-cover
             +leader(1)
 
             img
                 border: 6px solid rgba($bone, .2)
 
+        .b-share
+            ul 
+                li
+                    display: none
+
+                    &:first-child, &.show
+                        display: inline-block
+
+            a
+                border: 2px solid $gunmetal
+                border-radius: 50%
+                color: $gunmetal
+                margin-right: 9px
+                padding: 6px
+
+                &:hover
+                    background-color: $complementary-color
+                    border-color: $complementary-color
+                    color: $bone  
+
 
     &#b-album-details 
         background: #b9bcb4
 
-
-        ul li, ol li, p
-            +adjust-font-size-to(0.707rem, .8)
-
-            +breakpoint(desktops)
-                +adjust-font-size-to(1rem)
-
-        .b-album-details__released
+        .b-album-details__released, .b-album-details__artwork
             +apply-side-rhythm-border(bottom, 1px, 1, 0px, solid $bone)
 
             time
@@ -59,6 +82,11 @@ section
             +breakpoint(tablet)
                 +apply-side-rhythm-border(right, 1px, 1, 0px, solid $bone)
 
+        ul li, ol li, p
+            +adjust-font-size-to(0.707rem, .8)
+
+            +breakpoint(desktops)
+                +adjust-font-size-to(1rem)
            
     .b-service-buttons
         ul

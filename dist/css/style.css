@@ -2801,27 +2801,6 @@ body .callout {
   margin: 0 0 1rem 0;
   padding: 1rem;
 }
-body .parallax-window {
-  background: url("../images/header.jpg");
-  background-size: cover;
-  min-height: 64vw;
-  display: flex;
-  align-items: center;
-}
-body .parallax-window__music {
-  background: url("../images/music.jpg");
-}
-@media (min-width: 40.0625em) {
-  body .parallax-window {
-    background: transparent;
-    min-height: 40vw;
-  }
-}
-body .parallax-window article {
-  flex: 0 0 100%;
-  padding-top: 1.414rem;
-  padding-bottom: 1.414rem;
-}
 
 .shim {
   height: 47.123px;
@@ -2902,12 +2881,25 @@ header nav ul.b-menu li a.selected {
   /* disables click event */
 }
 
+section.header {
+  background: transparent url("../images/header.jpg") center 72% no-repeat;
+  background-size: cover;
+  min-height: 64vw;
+  display: flex;
+  align-items: center;
+}
+@media (min-width: 40.0625em) {
+  section.header {
+    min-height: 40vw;
+  }
+}
 section article {
   padding-top: 1.414rem;
   padding-bottom: 1.414rem;
 }
 section#b-music {
   color: #99a0a3;
+  background: url("../images/british-style-black-grill-coth.jpg");
 }
 section#b-music ol {
   padding-left: 23%;
@@ -2936,30 +2928,38 @@ section#b-music .b-wrapper-cover {
 section#b-music .b-wrapper-cover img {
   border: 6px solid rgba(227, 218, 201, 0.2);
 }
+section#b-music .b-share ul li {
+  display: none;
+}
+section#b-music .b-share ul li:first-child, section#b-music .b-share ul li.show {
+  display: inline-block;
+}
+section#b-music .b-share a {
+  border: 2px solid #536267;
+  border-radius: 50%;
+  color: #536267;
+  margin-right: 9px;
+  padding: 6px;
+}
+section#b-music .b-share a:hover {
+  background-color: #6B4C2B;
+  border-color: #6B4C2B;
+  color: #e3dac9;
+}
 section#b-album-details {
   background: #b9bcb4;
 }
-section#b-album-details ul li, section#b-album-details ol li, section#b-album-details p {
-  font-size: 0.707rem;
-  line-height: 1.1312rem;
-}
-@media (min-width: 64.0625em) {
-  section#b-album-details ul li, section#b-album-details ol li, section#b-album-details p {
-    font-size: 1rem;
-    line-height: 1.414rem;
-  }
-}
-section#b-album-details .b-album-details__released {
+section#b-album-details .b-album-details__released, section#b-album-details .b-album-details__artwork {
   border-bottom-width: 0.0625rem;
   border-bottom-style: solid;
   border-bottom-color: #e3dac9;
   padding-bottom: 1.3515rem;
 }
-section#b-album-details .b-album-details__released time {
+section#b-album-details .b-album-details__released time, section#b-album-details .b-album-details__artwork time {
   text-transform: uppercase;
 }
 @media (min-width: 64.0625em) {
-  section#b-album-details .b-album-details__released time {
+  section#b-album-details .b-album-details__released time, section#b-album-details .b-album-details__artwork time {
     font-size: 2.827rem;
     line-height: 4.242rem;
   }
@@ -2973,6 +2973,16 @@ section#b-album-details .b-album-details__music {
     border-right-style: solid;
     border-right-color: #e3dac9;
     padding-right: 1.3515rem;
+  }
+}
+section#b-album-details ul li, section#b-album-details ol li, section#b-album-details p {
+  font-size: 0.707rem;
+  line-height: 1.1312rem;
+}
+@media (min-width: 64.0625em) {
+  section#b-album-details ul li, section#b-album-details ol li, section#b-album-details p {
+    font-size: 1rem;
+    line-height: 1.414rem;
   }
 }
 section .b-service-buttons ul {
@@ -3175,7 +3185,7 @@ footer .b-container ul.b-social-networks li a {
 /* Animations */
 @font-face {
   font-family: "icomoon";
-  src: url('../fonts/icomoon.woff?1587832368') format('woff'), url('../fonts/icomoon.ttf?1587832368') format('truetype'), url('../fonts/icomoon.svg?1587832368') format('svg');
+  src: url('../fonts/icomoon.woff?1610634108') format('woff'), url('../fonts/icomoon.ttf?1610634108') format('truetype'), url('../fonts/icomoon.svg?1610634108') format('svg');
 }
 [class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
@@ -3246,6 +3256,18 @@ footer .b-container ul.b-social-networks li a {
 
 .icon-yandex:before {
   content: "";
+}
+
+.icon-share:before {
+  content: "";
+}
+
+.icon-facebook1:before {
+  content: "";
+}
+
+.icon-twitter:before {
+  content: "";
 }
 
 /*# sourceMappingURL=style.css.map */
